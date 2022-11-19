@@ -43,6 +43,20 @@ class PomodoroTimer:
         self.tabs.add(self.tab2, text="Short Break")
         self.tabs.add(self.tab3, text="Long Break")
 
+    #creating start, skip and reset button under the time
+        self.grid_layout = ttk.Frame(self.root)
+        self.grid_layout.pack(pady=10)
+
+        self.start_button = ttk.Button(self.grid_layout, text="Start", command=self.start_timer_thread)
+        self.start_button.grid(row=0, column=0)
+
+        self.skip_button = ttk.Button(self.grid_layout, text="Skip", command=self.skip_button)
+        self.skip_button.grid(row=0, column=1)
+
+        self.reset_button = ttk.Button(self.grid_layout, text="Reset", command=self.reset_button)
+        self.reset_button.grid(row=0, column=2)
+
+        
         self.root.mainloop()
      
 
