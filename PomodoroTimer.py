@@ -123,10 +123,20 @@ class PomodoroTimer:
             if not self.stopped or self.skipped:
                 self.tabs.select(0)
             self.start_timer()
+        
+        else:
+            print("Invalid timer id")
 
-
+    #define the reset button's function
     def reset_clock(self):
-        pass
+        self.stopped = True
+        self.skipped = False
+        self.pomodoros = 0
+        self.pomodoro_timer_label.config(text="25:00")
+        self.short_break_timer_label.config(text="05:00")
+        self.long_break_timer_label.config(text="15:00")
+        self.pomodoro_counter_label.config(text="Pomodoros: 0")
+
 
     def skip_clock(self):
         pass
