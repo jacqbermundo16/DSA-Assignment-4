@@ -47,20 +47,35 @@ class PomodoroTimer:
         self.grid_layout = ttk.Frame(self.root)
         self.grid_layout.pack(pady=10)
 
-        #self.start_button = ttk.Button(self.grid_layout, text="Start", command=self.start_timer_thread)
-        #self.start_button.grid(row=0, column=0)
+        self.start_button = ttk.Button(self.grid_layout, text="Start", command=self.start_timer_thread)
+        self.start_button.grid(row=0, column=0)
 
-        #self.skip_button = ttk.Button(self.grid_layout, text="Skip", command=self.skip_button)
-        #self.skip_button.grid(row=0, column=1)
+        self.skip_button = ttk.Button(self.grid_layout, text="Skip", command=self.skip_clock)
+        self.skip_button.grid(row=0, column=1)
 
-        #self.reset_button = ttk.Button(self.grid_layout, text="Reset", command=self.reset_button)
-        #self.reset_button.grid(row=0, column=2)
+        self.reset_button = ttk.Button(self.grid_layout, text="Reset", command=self.reset_clock)
+        self.reset_button.grid(row=0, column=2)
 
         self.pomodoro_counter_label = ttk.Label(self.grid_layout, text="Pomodoro: 0", font=("Ubuntu", 16))
         self.pomodoro_counter_label.grid(row=1, column=0, columnspan=3)
 
+        self.pomodoros = 0
+        self.skipped = False
+        self.stopped = False
+
         self.root.mainloop()
-     
+
+    def start_timer_thread(self):
+        pass
+
+    def start_timer(self):
+        pass
+
+    def reset_clock(self):
+        pass
+
+    def skip_clock(self):
+        pass
 
 
 #call to check if it works
