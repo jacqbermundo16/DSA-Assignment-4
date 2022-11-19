@@ -78,6 +78,7 @@ class PomodoroTimer:
 
         if timer_id == 1:
             full_seconds = 60 * 25
+            full_seconds = 5
             while full_seconds > 0 and not self.stopped:
                 minutes, seconds = divmod(full_seconds, 60)
                 self.pomodoro_timer_label.config(text=f"{minutes:02d}:{seconds:02d}")
@@ -93,10 +94,11 @@ class PomodoroTimer:
                     self.start_timer()
                 else:
                     self.tabs.select(1)
-                self.start_timer
+                    self.start_timer()
 
         elif timer_id == 2:
             full_seconds = 60 * 5
+            full_seconds = 5
             while full_seconds > 0 and not self.stopped:
                 minutes, seconds = divmod(full_seconds, 60)
                 self.short_break_timer_label.config(text=f"{minutes:02d}:{seconds:02d}")
@@ -106,10 +108,11 @@ class PomodoroTimer:
 
             if not self.stopped or self.skipped:
                 self.tabs.select(0)
-                self.start_timer()
+            self.start_timer()
 
         elif timer_id == 3:
             full_seconds = 60 * 15
+            full_seconds = 5
             while full_seconds > 0 and not self.stopped:
                 minutes, seconds = divmod(full_seconds, 60)
                 self.long_break_timer_label.config(text=f"{minutes:02d}:{seconds:02d}")
@@ -119,7 +122,7 @@ class PomodoroTimer:
 
             if not self.stopped or self.skipped:
                 self.tabs.select(0)
-                self.start_timer()
+            self.start_timer()
 
 
     def reset_clock(self):
